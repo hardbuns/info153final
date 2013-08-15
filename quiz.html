@@ -4,6 +4,16 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
+
+<script language="javascript">
+function getUrlParam(name){ 
+var reg = new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
+var url = window.location.search;
+var r = url.substr(1).match(reg); 
+if(r!=null)return unescape(r[2]); return null; 
+}
+</script>
+
 </head>
 <body>
 <div>
@@ -24,32 +34,39 @@
 
 <div>
 	<ul>
-		<a href="applied.html"><li class="hide math" id="applied">Applied Mathematics</li></a>
-		<li class="hide art history" id="artp">Art Practice</li>
-		<li class="hide biology physics science engineering" id="bioe">Bioengineering</li>
-		<li class="hide biology chemistry physics science" id="chemb">Chemical Biology</li>
-		<li class="hide chemistry physics science engineering" id="cheme">Chemical Engineering</li>
-		<li class="hide chemistry physics science" id="chem">Chemistry</li>
-		<li class="hide language" id="chinese">Chinese Language</li>
-		<li class="hide art english history" id="classics">Classics</li>
-		<li class="hide math compsci" id="cogsci">Cognitive Science</li>
-		<li class="hide english" id="complit">Comparative Literature</li>
-		<li class="hide compsci math" id="compsci">Computer Science</li>
-		<li class="hide math" id="econ">Economics</li>
-		<li class="hide compsci math science engineering physics" id="eecs">Electrical Engineering and Computer Science</li>
-		<li class="hide history art" id="film">Film Studies</li>
-		<li class="hide history" id="hist">History</li>
-		<li class="hide history art" id="histart">History of Art</li>
-		<li class="hide math science engineering physics" id="ie">Industiral Engineering</li>
-		<li class="hide math science engineering physics" id="meche">Mechanical engineering</li>
-		<li class="hide art" id="music">Music</li>
-		<li class="hide english" id="rhet">Rhetoric</li>
-		<li class="hide math science physics" id="phys">Physics</li>
-		<li class="hide history english" id="polisci">Political Science</li>
-		<li class="hide biology science" id="public">Public Health</li>
-		<li class="hide language" id="spanish">Spanish</li>
-		<li class="hide math" id="stats">Statistics</li>
-		<li class="hide art history" id="theater">Theater, Dance, and Performance Studies</li>
+		<a href="quiz1.html?pageId=2"><li class="hide math" id="applied">Applied Mathematics</li></a>
+		<a href="quiz1.html?pageId=4"><li class="hide art history" id="artp">Art Practice</li></a>
+		<a href="quiz1.html?pageId=5"><li class="hide biology physics science engineering" id="bioe">Bioengineering</li></a>
+		<a href="quiz1.html?pageId=6"><li class="hide biology chemistry physics science" id="chemb">Chemical Biology</li></a>
+		<a href="quiz1.html?pageId=7"><li class="hide chemistry physics science engineering" id="cheme">Chemical Engineering</li></a>
+		<a href="quiz1.html?pageId=8"><li class="hide chemistry physics science" id="chem">Chemistry</li></a>
+		<a href="quiz1.html?pageId=9"><li class="hide language" id="chinese">Chinese Language</li></a>
+		<a href="quiz1.html?pageId=10"><li class="hide art english history" id="classics">Classics</li></a>
+		<a href="quiz1.html?pageId=11"><li class="hide math compsci" id="cogsci">Cognitive Science</li></a>
+		<a href="quiz1.html?pageId=12"><li class="hide english" id="complit">Comparative Literature</li></a>
+		<a href="quiz1.html?pageId=3"><li class="hide compsci math" id="compsci">Computer Science</li></a>
+		<a href="quiz1.html?pageId=13"><li class="hide math" id="econ">Economics</li></a>
+		<a href="quiz1.html?pageId=14"><li class="hide compsci math science engineering physics" id="eecs">Electrical Engineering and Computer Science</li></a>
+		<a href="quiz1.html?pageId=15"><li class="hide history art" id="film">Film Studies</li></a>
+		<a href="quiz1.html?pageId=16"><li class="hide history" id="hist">History</li></a>
+		<a href="quiz1.html?pageId=17"><li class="hide history art" id="histart">History of Art</li></a>
+		<a href="quiz1.html?pageId=18"><li class="hide math science engineering physics" id="ie">Industiral Engineering</li></a>
+		<a href="quiz1.html?pageId=19"><li class="hide math science engineering physics" id="meche">Mechanical engineering</li></a>
+		<a href="quiz1.html?pageId=20"><li class="hide art" id="music">Music</li></a>
+		<a href="quiz1.html?pageId=21"><li class="hide english" id="rhet">Rhetoric</li></a>
+		<a href="quiz1.html?pageId=22"><li class="hide math science physics" id="phys">Physics</li></a>
+		<a href="quiz1.html?pageId=23"><li class="hide history english" id="polisci">Political Science</li></a>
+		<a href="quiz1.html?pageId=24"><li class="hide biology science" id="public">Public Health</li></a>
+		<a href="quiz1.html?pageId=25"><li class="hide language" id="spanish">Spanish</li></a>
+		<a href="quiz1.html?pageId=26"><li class="hide math" id="stats">Statistics</li></a>
+		<a href="quiz1.html?pageId=27"><li class="hide art history" id="theater">Theater, Dance, and Performance Studies</li></a>
 	</ul>
 </div>
+
+<iframe id="Form" src="" style="width:100%; height:500px;"></iframe>
+<script>
+var id = getUrlParam("pageId");
+if(id != null){document.getElementById('Form').src = "major-"+id+".html";}
+</script>
+
 </body>

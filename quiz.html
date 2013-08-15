@@ -4,8 +4,19 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
+<script language="javascript">
+//获取URL参数
+function getUrlParam(name){ 
+var reg = new RegExp("(^|&)"+name+"=([^&]*)(&|$)");
+var url = window.location.search;
+//url.substring(url.indexOf('?'),url.length);
+var r = url.substr(1).match(reg); 
+if(r!=null)return unescape(r[2]); return null; 
+}
+</script>
 </head>
 <body>
+<div id="removeme">Remove</div>
 <div>
 	<button id="art">Art</button>
 	<button id="biology">Biology
@@ -36,7 +47,7 @@
 		<li class="hide english" id="complit">Comparative Literature</li>
 		<li class="hide compsci math" id="compsci">Computer Science</li>
 		<li class="hide math" id="econ">Economics</li>
-		<li class="hide compsci math science engineering physics" id="eecs">Electrical Engineering and Computer Science</li>
+		<a href="quiz1.html?pageId=3"><li class="hide compsci math science engineering physics" id="eecs">Electrical Engineering and Computer Science</li></a>
 		<li class="hide history art" id="film">Film Studies</li>
 		<li class="hide history" id="hist">History</li>
 		<li class="hide history art" id="histart">History of Art</li>
@@ -52,4 +63,10 @@
 		<li class="hide art history" id="theater">Theater, Dance, and Performance Studies</li>
 	</ul>
 </div>
+<iframe id="Form" src="" style="width:100%; height:500px;"></iframe>
+<script>
+//关键在这里判断src
+var id = getUrlParam("pageId");
+if(id != null){document.getElementById('Form').src = "Untitled-"+id+".html";}
+</script>
 </body>

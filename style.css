@@ -22,6 +22,14 @@ ul{
 	padding:3px;
 	height:20px;
 	line-height:20px;
+	cursor: pointer;
 }
 
-.filters_sho
+#removeme{
+	position:fixed;
+	height:20px;
+	padding:3px;
+	background-color:rgba(0,0,0,0.5);
+	color:white;
+	border-radius:2px;
+}
